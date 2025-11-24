@@ -1,0 +1,13 @@
+extends template
+include mixins/card.pug
+
+block content
+  .container.mt-4
+    h1.text-center.mb-4 #{capitalize(categoryName)} Catalog
+    if category.length
+      .row
+        each item in category
+          .col-md-3.mb-4
+            +card(item)
+    else
+      .alert.alert-warning.text-center No products found in this category.

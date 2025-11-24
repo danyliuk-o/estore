@@ -1,0 +1,14 @@
+mixin card(item)
+  .card.h-100
+    .p-2
+      img.card-img-top(src=item.image, alt=item.title, style="height:200px;object-fit:contain;")
+    .card-body.d-flex.flex-column.p-2
+      h5.card-title=item.title
+      p.card-text=item.description
+      p.card-text
+        b Price:
+        | $#{item.price}
+      p.card-text.m-0
+      | In stock: #{item.stock}
+    .card-footer.mt-auto.p-2
+      a.btn.btn-primary(href='/' + item.url) View Details

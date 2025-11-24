@@ -1,0 +1,13 @@
+extends template.pug
+include mixins/card.pug
+
+block content
+  .container.mt-4
+    .row
+      .col-12
+        each category, categoryName in categories
+          h1.text-center.mb-4= capitalize(categoryName)
+          .row
+            each item in category
+              .col-md-3.mb-4
+                +card(item)
